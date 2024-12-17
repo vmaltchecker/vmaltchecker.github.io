@@ -36,7 +36,7 @@ body {
     border: none;
     outline: none;
     display: block;
-    max-width: 100%;
+    max-width: 100%;  
 }
 .title {
     color: white;
@@ -85,7 +85,18 @@ body {
     font-size: 15px;
     padding: 10px;
 }
-@media (max-width: 600px) {
+
+
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-container div iframe {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
     .grid-container {
         grid-template-columns: 1fr;
     }
