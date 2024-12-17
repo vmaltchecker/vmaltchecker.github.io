@@ -51,6 +51,14 @@
             text-align: center;
             margin: auto;
 		}
+        @media (max-width: 600px) {
+			.grid-container {
+				grid-template-columns: 1fr; /* 1 column on smaller screens */
+			}
+			.grid-container div iframe {
+				width: 100%; /* Make iframe fill the container width */
+			}
+		}
 	 </style>
 </head>
 <body>
