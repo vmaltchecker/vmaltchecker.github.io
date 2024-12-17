@@ -36,7 +36,8 @@ body {
     border: none;
     outline: none;
     display: block;
-    max-width: 100%;  
+    max-width: 100%;
+    overflow: hidden;
 }
 .title {
     color: white;
