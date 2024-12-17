@@ -18,14 +18,14 @@
 			grid-template-columns: repeat(3, 1fr);
 			gap: 20px;
 			auto-rows-max: 360px;
-			margin-top: 20px; /* Added to create space between title and grid container */
+			margin-top: 20px;
 		}
 		.grid-container div {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 		}
-			.grid-container div h1 {
+		.grid-container div h1 {
 			text-align: center;
             max-width: 600px;
             height: 50px;
@@ -60,7 +60,7 @@
 			}
 		}
 	 </style>
-</head>
+</head> 
 <body>
 	<div class="title">Goon Cave</div>
 	<div class="grid-container">
@@ -187,9 +187,35 @@
 			<a href="LINK" target="_blank"><h1>TITLE</h1></a>
             <iframe src="LINK"></iframe>
         </div>
-
+        
+        <div class="#">
+			<a href="LINK" target="_blank"><h1>TITLE</h1></a>
+            <iframe src="LINK"></iframe>
+        </div>
+        
+        <div class="#">
+			<a href="LINK" target="_blank"><h1>TITLE</h1></a>
+            <iframe src="LINK"></iframe>
+        </div>
 	</div>
+    <script>
+		// JavaScript to reverse the order of grid items dynamically
+		const gridItems = document.querySelectorAll('.grid-container div');
+		const reversedItems = Array.from(gridItems).reverse();
+		
+		// Append the reversed items back to the grid container
+		const gridContainer = document.querySelector('.grid-container');
 
+		// Loop through the reversed items and append them, excluding those with the class "hidden"
+		reversedItems.forEach(item => {
+			// Check if the class name is "hidden" (or any other class you wish to hide)
+			if (item.classList.contains('#')) {
+				item.style.display = 'none';  // Hide the item
+			} else {
+				gridContainer.appendChild(item); // Otherwise, append the item to the grid
+			}
+		});
+	</script>
     <div class="title">Goon Cave</div>
     <p>Sophia Burns</p>
     <p>Hazel Heart</p>
