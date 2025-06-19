@@ -5,16 +5,20 @@
     box-sizing: border-box;
 }
 
-/* Prevent any accidental horizontal overflow */
+/* Prevent accidental horizontal overflow */
 html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    width: 100%;
 }
 
-/* Body */
+/* Body with positioning context and max-width */
 body {
-    width: 100%;
+    position: relative;
+    max-width: calc(100vh * 16 / 9);
+    margin: 0 auto;
+    padding-top: 50px; /* adjust to cover quickLinks height */
     min-height: 100vh;
     background-color: black;
     color: white;
@@ -22,6 +26,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Quick links confined within body’s width */
+.quickLinks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 15px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    z-index: 100;
+}
+.rightUp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 15px;
+    padding: 10px;
+    z-index: 100;
 }
 
 /* Images */
@@ -37,9 +61,8 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
-    padding: 0 10px; /* small padding to avoid touching edges */
+    padding: 0 10px;
     auto-rows-max: 360px;
-    /* ensure it cannot exceed viewport */
     max-width: 100%;
 }
 
@@ -48,10 +71,9 @@ img {
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
-    min-width: 0; /* allow shrinking below intrinsic size */
+    min-width: 0;
 }
 
-/* If any nested flex children hold content, also allow shrink */
 .grid-container > div > * {
     min-width: 0;
 }
@@ -65,7 +87,6 @@ img {
     word-wrap: break-word;
     hyphens: auto;
     cursor: pointer;
-    /* no fixed height */
 }
 
 .grid-container div a {
@@ -110,25 +131,6 @@ img {
     margin: 5px auto;
     font-style: italic;
     font-size: clamp(0.8rem, 3vw, 1rem);
-}
-
-/* Quick links */
-.quickLinks {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 15px;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-.rightUp {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 15px;
-    padding: 10px;
 }
 
 /* Responsive adjustments */
