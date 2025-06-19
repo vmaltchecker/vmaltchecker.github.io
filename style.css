@@ -18,7 +18,7 @@ body {
     position: relative;
     max-width: calc(100vh * 16 / 9);
     margin: 0 auto;
-    padding-top: 50px; /* adjust to cover quickLinks height */
+    padding-top: 20px; /* adjust to cover quickLinks height */
     min-height: 100vh;
     background-color: black;
     color: white;
