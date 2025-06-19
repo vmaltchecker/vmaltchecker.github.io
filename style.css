@@ -30,7 +30,11 @@ img {
     height: 50px;
     font-size: 18px;
     cursor: pointer;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
+
 .grid-container div a {
     color: white;
     text-decoration: none;
